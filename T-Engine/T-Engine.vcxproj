@@ -153,10 +153,12 @@
   <ItemGroup>
     <ClInclude Include="Nexus.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="T_Nexus.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nexus.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="T_Nexus.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

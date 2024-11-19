@@ -28,6 +28,9 @@
     <ClCompile Include="pch.cpp">
       <Filter>Engine\99.Headers</Filter>
     </ClCompile>
+    <ClCompile Include="T_Nexus.cpp">
+      <Filter>Engine\00.Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
@@ -35,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Engine\99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="T_Nexus.h">
+      <Filter>Engine\00.Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

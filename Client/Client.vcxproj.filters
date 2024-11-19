@@ -25,6 +25,9 @@
     <ClInclude Include="targetver.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
+    <ClInclude Include="MyNexus.h">
+      <Filter>00.Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -41,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
+      <Filter>00.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="MyNexus.cpp">
       <Filter>00.Core</Filter>
     </ClCompile>
   </ItemGroup>
