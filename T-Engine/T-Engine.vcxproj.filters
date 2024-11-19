@@ -25,7 +25,7 @@
     <ClCompile Include="Nexus.cpp">
       <Filter>Engine\00.Core</Filter>
     </ClCompile>
-    <ClCompile Include="EnginePch.cpp">
+    <ClCompile Include="pch.cpp">
       <Filter>Engine\99.Headers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -33,7 +33,7 @@
     <ClInclude Include="Nexus.h">
       <Filter>Engine\00.Core</Filter>
     </ClInclude>
-    <ClInclude Include="EnginePch.h">
+    <ClInclude Include="pch.h">
       <Filter>Engine\99.Headers</Filter>
     </ClInclude>
   </ItemGroup>

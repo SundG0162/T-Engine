@@ -1,4 +1,7 @@
 #pragma once
+
+#pragma comment(lib, "T-Engine.lib")
+
 #include<Windows.h>
 #include<tchar.h>
 #include<memory>
@@ -18,17 +21,14 @@
 #include<functional>
 namespace fs = std::filesystem;
 
-// 각종 using 
 using std::vector;
 using std::list;
 using std::map;
 using std::wstring;
 
-// 각종 lib
 #pragma comment(lib, "winmm.lib")
 #pragma comment(lib, "msimg32.lib")
 
-// 각종 define
 #define PI 3.14159265f
 #define SCREEN_WIDTH  800
 #define SCREEN_HEIGHT 600
@@ -40,3 +40,4 @@ using std::wstring;
 #ifdef _DEBUG
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #endif
+#include <functional>

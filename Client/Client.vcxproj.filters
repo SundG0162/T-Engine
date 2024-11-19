@@ -25,9 +25,6 @@
     <ClInclude Include="targetver.h">
       <Filter>99.Headers</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>99.Headers</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -45,9 +42,6 @@
   <ItemGroup>
     <ClCompile Include="Client.cpp">
       <Filter>00.Core</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>99.Headers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
