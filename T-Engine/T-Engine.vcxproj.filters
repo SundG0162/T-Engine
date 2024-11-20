@@ -55,6 +55,9 @@
     <ClCompile Include="UpdateLayer.cpp">
       <Filter>Engine\02.Layers</Filter>
     </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Engine\04.Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
@@ -80,6 +83,9 @@
     </ClInclude>
     <ClInclude Include="UpdateLayer.h">
       <Filter>Engine\02.Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Engine\04.Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
