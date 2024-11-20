@@ -8,12 +8,6 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{a6eee69c-3302-4698-b153-a9c30b0af579}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources">
-      <UniqueIdentifier>{577a62d3-2d4f-4ae3-987f-1480330e1c9b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Utils">
-      <UniqueIdentifier>{c2902ddf-2eb0-4f35-ab9a-9536814bf34b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\00.Core">
       <UniqueIdentifier>{f6010282-bdc8-4244-9658-5a978f232fbb}</UniqueIdentifier>
     </Filter>
@@ -31,6 +25,12 @@
     </Filter>
     <Filter Include="Engine\04.Entity">
       <UniqueIdentifier>{fc067e9a-657a-4898-93b3-b46793c392e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Resources">
+      <UniqueIdentifier>{577a62d3-2d4f-4ae3-987f-1480330e1c9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\06.Utils">
+      <UniqueIdentifier>{c2902ddf-2eb0-4f35-ab9a-9536814bf34b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +63,15 @@
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
       <Filter>Engine\03.Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Engine\05.Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
+      <Filter>Engine\06.Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine\05.Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +107,15 @@
     </ClInclude>
     <ClInclude Include="Renderer.h">
       <Filter>Engine\03.Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Engine\05.Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Engine\06.Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine\05.Resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -160,8 +160,11 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderLayer.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Texture.h" />
     <ClInclude Include="T_Nexus.h" />
     <ClInclude Include="UpdateLayer.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Component.cpp" />
@@ -172,8 +175,11 @@
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderLayer.cpp" />
+    <ClCompile Include="Resource.cpp" />
+    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="T_Nexus.cpp" />
     <ClCompile Include="UpdateLayer.cpp" />
+    <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
