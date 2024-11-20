@@ -11,6 +11,12 @@
     <Filter Include="00.Core">
       <UniqueIdentifier>{c7f45329-83fe-4daf-a424-898c398ae0dc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{ca49fc2d-9a4c-45fa-9eaf-a8dbf1d0cc47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test\Domains">
+      <UniqueIdentifier>{f37969b7-936d-449d-aa07-0ca20f265a74}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -27,6 +33,9 @@
     </ClInclude>
     <ClInclude Include="MyNexus.h">
       <Filter>00.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="TestDomain.h">
+      <Filter>Test\Domains</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +57,9 @@
     </ClCompile>
     <ClCompile Include="MyNexus.cpp">
       <Filter>00.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDomain.cpp">
+      <Filter>Test\Domains</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

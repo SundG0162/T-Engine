@@ -3,7 +3,7 @@ class Nexus
 {
 public:
 	Nexus();
-	~Nexus();
+	virtual ~Nexus();
 public:
 	int ignite(HINSTANCE hInstance, LPWSTR lpCmdLine, int nCmdShow);
 	static LRESULT CALLBACK wndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);

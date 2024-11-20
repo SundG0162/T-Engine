@@ -34,7 +34,7 @@ using std::wstring;
 #define SCREEN_HEIGHT 600
 #define GRAVITY 9.8f
 
-#define SAFE_DELETE(inst) if(inst != nullptr) delete inst; inst = nullptr
+#define SAFE_DELETE(inst) if(inst != nullptr) { delete inst; inst = nullptr; }
 
 #define DECLARE_SINGLETON(type) \
 private:                     \
@@ -46,12 +46,7 @@ public:                         \
         return &instance;         \
     }                         \
 
-#define SAFE_DELETE(ptr)        \
-    if (ptr)                    \
-    {                            \
-        delete ptr;                \
-        ptr = nullptr;            \
-    }
+
 
 #define GET_SINGLETON(type) type::getInstance()
 

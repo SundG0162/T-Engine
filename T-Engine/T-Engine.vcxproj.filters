@@ -37,9 +37,6 @@
     <ClCompile Include="Nexus.cpp">
       <Filter>Engine\00.Core</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Engine\99.Headers</Filter>
-    </ClCompile>
     <ClCompile Include="T_Nexus.cpp">
       <Filter>Engine\00.Core</Filter>
     </ClCompile>
@@ -73,13 +70,16 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Engine\05.Resources</Filter>
     </ClCompile>
+    <ClCompile Include="DomainManager.cpp">
+      <Filter>Engine\01.Domains</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Engine\99.Headers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
       <Filter>Engine\00.Core</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Engine\99.Headers</Filter>
     </ClInclude>
     <ClInclude Include="T_Nexus.h">
       <Filter>Engine\00.Core</Filter>
@@ -116,6 +116,12 @@
     </ClInclude>
     <ClInclude Include="Texture.h">
       <Filter>Engine\05.Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="DomainManager.h">
+      <Filter>Engine\01.Domains</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Engine\99.Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

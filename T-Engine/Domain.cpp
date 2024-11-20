@@ -41,6 +41,15 @@ void Domain::update()
 
 void Domain::release()
 {
+	for (Entity* entity : _entities)
+	{
+		SAFE_DELETE(entity);
+	}
+	_entities.clear();
+	for (int i = (int)LAYER_PRIORITY::START + 1; i < (int)LAYER_PRIORITY::END; i++)
+	{
+		SAFE_DELETE(_layers[i]);
+	}
 }
 
 void Domain::addLayer(Layer* layer, LAYER_PRIORITY priority)

@@ -8,10 +8,10 @@ public:
 	Domain();
 	virtual ~Domain();
 public:
-	void setup(); //생성됏을때 
-	void init(); //로드됐을때
-	void update();
-	void release();
+	virtual void setup(); //생성됏을때 
+	virtual void init(); //로드됐을때
+	virtual void update();
+	virtual void release();
 public:
 	void addLayer(Layer* layer, LAYER_PRIORITY priority);
 	void removeLayer(Layer* layer);

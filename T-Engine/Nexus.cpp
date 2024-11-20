@@ -6,6 +6,7 @@ Nexus::Nexus()
 	, _hWnd(NULL)
 	, _width(SCREEN_WIDTH)
 	, _height(SCREEN_HEIGHT)
+	, _windowName(L"")
 {
 }
 
