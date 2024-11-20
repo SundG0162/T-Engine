@@ -5,7 +5,7 @@ class T_Nexus : public Nexus, public std::enable_shared_from_this<T_Nexus>
 {
 public:
 	T_Nexus();
-	~T_Nexus();
+	virtual ~T_Nexus();
 protected:
 	virtual void startUp() override;
 	virtual void mainUpdate() override;

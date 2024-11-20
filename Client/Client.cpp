@@ -8,8 +8,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-    MyNexus* myNexus = new MyNexus;
+    std::shared_ptr<MyNexus> myNexus = std::make_shared<MyNexus>();
     myNexus->ignite(hInstance, lpCmdLine, nCmdShow);
-    SAFE_DELETE(myNexus);
     _CrtDumpMemoryLeaks();
 }
