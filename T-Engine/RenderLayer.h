@@ -7,5 +7,9 @@ public:
 	~RenderLayer();
 public:
 	void update() override;
+private:
+	HDC _hMainDC;
+	HDC _hBackDC;
+	HBITMAP _hBitmap;
 };
 

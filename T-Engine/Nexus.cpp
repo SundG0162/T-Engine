@@ -82,7 +82,6 @@ int Nexus::messageLoop()
 		else
 		{
 			mainUpdate();
-			mainRender();
 		}
 	}
 	cleanUp();

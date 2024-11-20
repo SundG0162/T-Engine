@@ -1,5 +1,6 @@
 #pragma once
 #include "LayerPriority.h"
+class Entity;
 class Layer;
 class Domain
 {
@@ -7,12 +8,14 @@ public:
 	Domain();
 	~Domain();
 public:
-	virtual void update();
+	void setup();
+	void update();
 public:
 	void addLayer(Layer* layer, LAYER_PRIORITY priority);
 	void removeLayer(Layer* layer);
 	void cleanUp();
 public:
+	const vector<Entity*>& getEntities() { return _entities; }
 	Layer* getLayer(const LAYER_PRIORITY& priority) { return _layers[(int)priority]; }
 	template<typename T>
 	T* getLayer()
@@ -27,5 +30,6 @@ public:
 		return layer;
 	}
 private:
+	vector<Entity*> _entities;
 	Layer* _layers[(int)LAYER_PRIORITY::END];
 };

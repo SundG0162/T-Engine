@@ -58,6 +58,9 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Engine\04.Entity</Filter>
     </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Engine\03.Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
@@ -86,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>Engine\04.Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Engine\03.Component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

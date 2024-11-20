@@ -17,6 +17,7 @@ T_Nexus::~T_Nexus()
 void T_Nexus::startUp()
 {
 	_domain = new Domain;
+	_domain->setup();
 	_hMainDC = GetDC(_hWnd);
 	_hBackDC = CreateCompatibleDC(_hMainDC);
 	_hBitmap = CreateCompatibleBitmap(_hMainDC, _width, _height);
@@ -29,12 +30,12 @@ void T_Nexus::mainUpdate()
 	update();
 }
 
-void T_Nexus::mainRender()
-{
-	PatBlt(_hBackDC, 0, 0, _width, _height, WHITENESS);
-	//여기서 렌더링해야함.
-	BitBlt(_hMainDC, 0, 0, _width, _height, _hBackDC, 0, 0, SRCCOPY);
-}
+//void T_Nexus::mainRender()
+//{
+//	PatBlt(_hBackDC, 0, 0, _width, _height, WHITENESS);
+//	//여기서 렌더링해야함.
+//	BitBlt(_hMainDC, 0, 0, _width, _height, _hBackDC, 0, 0, SRCCOPY);
+//}
 
 void T_Nexus::cleanUp()
 {

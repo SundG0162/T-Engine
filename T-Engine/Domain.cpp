@@ -6,16 +6,24 @@
 
 Domain::Domain()
 {
-	for (int i = (int)LAYER_PRIORITY::START + 1; i < (int)LAYER_PRIORITY::END; i++)
-	{
-		_layers[i] = nullptr;
-	}
-	addLayer(new RenderLayer, LAYER_PRIORITY::RENDER);
-	addLayer(new UpdateLayer, LAYER_PRIORITY::UPDATE);
 }
 
 Domain::~Domain()
 {
+}
+
+void Domain::setup()
+{
+	{
+		RenderLayer* layer = new RenderLayer;
+		layer->setDomain(this);
+		addLayer(layer, LAYER_PRIORITY::RENDER);
+	}
+	{
+		UpdateLayer* layer = new UpdateLayer;
+		layer->setDomain(this);
+		addLayer(layer, LAYER_PRIORITY::UPDATE);
+	}
 }
 
 void Domain::update()

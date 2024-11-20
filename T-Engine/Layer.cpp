@@ -3,7 +3,7 @@
 
 Layer::Layer()
 {
-	_isActive = true;
+	_isActive = true; 
 }
 
 Layer::~Layer()

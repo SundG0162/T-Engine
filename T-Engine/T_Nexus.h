@@ -9,7 +9,6 @@ public:
 protected:
 	virtual void startUp() override;
 	virtual void mainUpdate() override;
-	virtual void mainRender() override;
 	virtual void cleanUp() override;
 public:
 	virtual void init();

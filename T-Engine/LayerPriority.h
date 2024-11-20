@@ -6,4 +6,4 @@ enum class LAYER_PRIORITY
 	COMPONENT,
 	RENDER,
 	END
-};
+}; 

@@ -15,7 +15,6 @@ private:
 protected:
     virtual void startUp() abstract;
     virtual void mainUpdate() abstract;
-    virtual void mainRender() abstract;
     virtual void cleanUp() abstract;
 
 public:
