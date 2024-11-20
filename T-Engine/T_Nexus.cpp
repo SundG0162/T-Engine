@@ -6,7 +6,6 @@ T_Nexus::T_Nexus()
 	: _hMainDC(nullptr)
 	, _hBackDC(nullptr)
 	, _hBitmap(nullptr)
-	, _domain(nullptr)
 {
 }
 
@@ -16,9 +15,7 @@ T_Nexus::~T_Nexus()
 
 void T_Nexus::startUp()
 {
-	_domain = new Domain;
 	nexus = shared_from_this();
-	_domain->setup();
 	_hMainDC = GetDC(_hWnd);
 	_hBackDC = CreateCompatibleDC(_hMainDC);
 	_hBitmap = CreateCompatibleBitmap(_hMainDC, _width, _height);

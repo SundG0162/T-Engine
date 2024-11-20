@@ -36,6 +36,24 @@ using std::wstring;
 
 #define SAFE_DELETE(inst) if(inst != nullptr) delete inst; inst = nullptr
 
+#define DECLARE_SINGLETON(type) \
+private:                     \
+    type() {}                 \
+public:                         \
+    static type* getInstance()     \
+    {                         \
+        static type instance;     \
+        return &instance;         \
+    }                         \
+
+#define SAFE_DELETE(ptr)        \
+    if (ptr)                    \
+    {                            \
+        delete ptr;                \
+        ptr = nullptr;            \
+    }
+
+#define GET_SINGLETON(type) type::getInstance()
 
 #define _CRTDEBG_MAP_ALLOC
 
