@@ -2,6 +2,7 @@
 #include "RenderLayer.h"
 #include "Domain.h"
 #include "Entity.h"
+#include "Renderer.h"
 
 RenderLayer::RenderLayer()
 	: _hMainDC(nullptr)
@@ -21,11 +22,11 @@ void RenderLayer::update()
 	const vector<Entity*>& entities = _domain->getEntities();
 	for (Entity* entity : entities)
 	{
-		/*Renderer renderer = entity->getComponent<Renderer>();
+		Renderer* renderer = entity->getComponent<Renderer>();
 		if (renderer != nullptr)
 		{
 			renderer->render(_hBackDC);
-		}*/
+		}
 	}
 	//·»´õ¸µ
 
