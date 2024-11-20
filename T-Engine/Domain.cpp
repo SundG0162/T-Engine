@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Domain.h"
 #include "Layer.h"
+#include "RenderLayer.h"
+#include "UpdateLayer.h"
 
 Domain::Domain()
 {
@@ -8,6 +10,8 @@ Domain::Domain()
 	{
 		_layers[i] = nullptr;
 	}
+	addLayer(new RenderLayer, LAYER_PRIORITY::RENDER);
+	addLayer(new UpdateLayer, LAYER_PRIORITY::UPDATE);
 }
 
 Domain::~Domain()

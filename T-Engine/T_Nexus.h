@@ -19,7 +19,6 @@ public:
 	const HDC& getMainDC() const { return _hMainDC; }
 protected:
 	Domain* _domain;
-
 	HDC _hMainDC;
 	HDC _hBackDC;
 	HBITMAP _hBitmap;

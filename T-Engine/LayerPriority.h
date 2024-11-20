@@ -1,7 +1,7 @@
 #pragma once
 enum class LAYER_PRIORITY
 {
-	START,
+	START = 0,
 	UPDATE,
 	COMPONENT,
 	RENDER,

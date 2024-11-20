@@ -1,9 +1,8 @@
 #include "pch.h"
 #include "Layer.h"
 
-Layer::Layer(int priority)
+Layer::Layer()
 {
-	_priority = priority;
 	_isActive = true;
 }
 

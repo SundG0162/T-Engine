@@ -32,6 +32,7 @@ void T_Nexus::mainUpdate()
 void T_Nexus::mainRender()
 {
 	PatBlt(_hBackDC, 0, 0, _width, _height, WHITENESS);
+	//여기서 렌더링해야함.
 	BitBlt(_hMainDC, 0, 0, _width, _height, _hBackDC, 0, 0, SRCCOPY);
 }
 
