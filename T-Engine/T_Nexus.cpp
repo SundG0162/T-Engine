@@ -17,6 +17,7 @@ T_Nexus::~T_Nexus()
 void T_Nexus::startUp()
 {
 	_domain = new Domain;
+	nexus = shared_from_this();
 	_domain->setup();
 	_hMainDC = GetDC(_hWnd);
 	_hBackDC = CreateCompatibleDC(_hMainDC);

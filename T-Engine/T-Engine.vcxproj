@@ -158,6 +158,7 @@
     <ClInclude Include="LayerPriority.h" />
     <ClInclude Include="Nexus.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="RenderLayer.h" />
     <ClInclude Include="T_Nexus.h" />
     <ClInclude Include="UpdateLayer.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Nexus.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RenderLayer.cpp" />
     <ClCompile Include="T_Nexus.cpp" />
     <ClCompile Include="UpdateLayer.cpp" />

@@ -1,7 +1,7 @@
 #pragma once
 #include "Nexus.h"
 class Domain;
-class T_Nexus : public Nexus
+class T_Nexus : public Nexus, public std::enable_shared_from_this<T_Nexus>
 {
 public:
 	T_Nexus();

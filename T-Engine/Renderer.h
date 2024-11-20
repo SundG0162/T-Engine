@@ -6,7 +6,6 @@ public:
 	Renderer();
 	~Renderer();
 public:
-	void update() override;
-	virtual void render(HDC hdc);
+	virtual void render(HDC hdc) abstract;
 };
 
