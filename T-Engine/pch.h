@@ -34,6 +34,9 @@ using std::wstring;
 #define SCREEN_HEIGHT 600
 #define GRAVITY 9.8f
 
+#define SAFE_DELETE(inst) if(inst != nullptr) delete inst; inst = nullptr
+
+
 #define _CRTDEBG_MAP_ALLOC
 
 #include<crtdbg.h>

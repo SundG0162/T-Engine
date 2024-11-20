@@ -8,7 +8,6 @@ public:
 public:
     virtual void init() override;
     virtual void update() override;
-    virtual void render(HDC hdc) override;
     virtual void release() override;
 };
 

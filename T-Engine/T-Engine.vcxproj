@@ -151,14 +151,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Domain.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="LayerPriority.h" />
     <ClInclude Include="Nexus.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RenderLayer.h" />
     <ClInclude Include="T_Nexus.h" />
+    <ClInclude Include="UpdateLayer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Domain.cpp" />
+    <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Nexus.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="RenderLayer.cpp" />
     <ClCompile Include="T_Nexus.cpp" />
+    <ClCompile Include="UpdateLayer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

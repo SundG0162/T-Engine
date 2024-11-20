@@ -10,5 +10,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 {
     MyNexus* myNexus = new MyNexus;
     myNexus->ignite(hInstance, lpCmdLine, nCmdShow);
+    SAFE_DELETE(myNexus);
     _CrtDumpMemoryLeaks();
 }

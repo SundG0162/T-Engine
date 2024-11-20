@@ -20,6 +20,18 @@
     <Filter Include="Engine\99.Headers">
       <UniqueIdentifier>{f3260f54-b8e6-41ba-961b-955477eb31da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\01.Domains">
+      <UniqueIdentifier>{65e076ec-6165-477c-914d-6cc58828d4ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02.Layers">
+      <UniqueIdentifier>{a2298728-7938-4740-9830-9babccf14eee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Component">
+      <UniqueIdentifier>{7cc4cb8f-e08a-4766-afb4-6f5215aea520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Entity">
+      <UniqueIdentifier>{fc067e9a-657a-4898-93b3-b46793c392e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nexus.cpp">
@@ -31,6 +43,18 @@
     <ClCompile Include="T_Nexus.cpp">
       <Filter>Engine\00.Core</Filter>
     </ClCompile>
+    <ClCompile Include="Domain.cpp">
+      <Filter>Engine\01.Domains</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Engine\02.Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderLayer.cpp">
+      <Filter>Engine\02.Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateLayer.cpp">
+      <Filter>Engine\02.Layers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
@@ -41,6 +65,21 @@
     </ClInclude>
     <ClInclude Include="T_Nexus.h">
       <Filter>Engine\00.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Domain.h">
+      <Filter>Engine\01.Domains</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Engine\02.Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderLayer.h">
+      <Filter>Engine\02.Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerPriority.h">
+      <Filter>Engine\02.Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateLayer.h">
+      <Filter>Engine\02.Layers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
