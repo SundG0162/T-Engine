@@ -26,6 +26,10 @@ void Domain::setup()
 	}
 }
 
+void Domain::init()
+{
+}
+
 void Domain::update()
 {
 	for (Layer* layer : _layers)
@@ -33,6 +37,10 @@ void Domain::update()
 		if (layer->IsActive())
 			layer->update();
 	}
+}
+
+void Domain::release()
+{
 }
 
 void Domain::addLayer(Layer* layer, LAYER_PRIORITY priority)

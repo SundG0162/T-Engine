@@ -6,7 +6,7 @@ class Domain
 {
 public:
 	Domain();
-	~Domain();
+	virtual ~Domain();
 public:
 	void setup(); //생성됏을때 
 	void init(); //로드됐을때
