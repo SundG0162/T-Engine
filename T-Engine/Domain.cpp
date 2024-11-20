@@ -6,6 +6,8 @@
 
 Domain::Domain()
 {
+	memset(_layers, 0, sizeof(_layers));
+	setup();
 }
 
 Domain::~Domain()
@@ -26,16 +28,12 @@ void Domain::setup()
 	}
 }
 
-void Domain::init()
-{
-}
-
 void Domain::update()
 {
-	for (Layer* layer : _layers)
+	for (int i = (int)LAYER_PRIORITY::START + 1; i < (int)LAYER_PRIORITY::END; i++)
 	{
-		if (layer->IsActive())
-			layer->update();
+		if (_layers[i] != nullptr && _layers[i]->isActive())
+				_layers[i]->update();
 	}
 }
 

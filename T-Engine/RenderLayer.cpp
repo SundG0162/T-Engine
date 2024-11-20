@@ -3,12 +3,17 @@
 #include "Domain.h"
 #include "Entity.h"
 #include "Renderer.h"
+#include "T_Nexus.h"
 
 RenderLayer::RenderLayer()
 	: _hMainDC(nullptr)
 	, _hBackDC(nullptr)
 	, _hBitmap(nullptr)
 {
+	_hMainDC = GetDC(nexus->getHWnd());
+	_hBackDC = CreateCompatibleDC(_hMainDC);
+	_hBitmap = CreateCompatibleBitmap(_hMainDC, SCREEN_WIDTH, SCREEN_HEIGHT);
+	SelectObject(_hBackDC, _hBitmap);
 }
 
 RenderLayer::~RenderLayer()

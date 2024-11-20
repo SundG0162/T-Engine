@@ -76,6 +76,9 @@
     <ClCompile Include="pch.cpp">
       <Filter>Engine\99.Headers</Filter>
     </ClCompile>
+    <ClCompile Include="TextureRenderer.cpp">
+      <Filter>Engine\03.Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
@@ -122,6 +125,9 @@
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Engine\99.Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureRenderer.h">
+      <Filter>Engine\03.Component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

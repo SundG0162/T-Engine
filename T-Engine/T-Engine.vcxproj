@@ -163,6 +163,7 @@
     <ClInclude Include="RenderLayer.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureRenderer.h" />
     <ClInclude Include="T_Nexus.h" />
     <ClInclude Include="UpdateLayer.h" />
     <ClInclude Include="utils.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="RenderLayer.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureRenderer.cpp" />
     <ClCompile Include="T_Nexus.cpp" />
     <ClCompile Include="UpdateLayer.cpp" />
     <ClCompile Include="utils.cpp" />

@@ -9,7 +9,7 @@ public:
 	virtual ~Domain();
 public:
 	virtual void setup(); //생성됏을때 
-	virtual void init(); //로드됐을때
+	virtual void init() abstract; //로드됐을때
 	virtual void update();
 	virtual void release();
 public:
@@ -31,7 +31,7 @@ public:
 		}
 		return layer;
 	}
-private:
+protected:
 	vector<Entity*> _entities;
 	Layer* _layers[(int)LAYER_PRIORITY::END];
 };

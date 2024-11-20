@@ -9,6 +9,8 @@ public:
 	void loadBMP(const wstring& path);
 public:
 	const HDC& getTextureDC() { return _hDC; }
+	const int& getWidth() { return _bitInfo.bmWidth; }
+	const int& getHeight() { return _bitInfo.bmHeight; }
 	void setTransparentColor(COLORREF color) { _transparentColor = color; }
 	const COLORREF& getTransparentColor() { return _transparentColor; }
 private:

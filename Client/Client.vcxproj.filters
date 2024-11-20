@@ -17,6 +17,9 @@
     <Filter Include="Test\Domains">
       <UniqueIdentifier>{f37969b7-936d-449d-aa07-0ca20f265a74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Test\Entities">
+      <UniqueIdentifier>{55a9466f-df9e-4d92-91aa-eda1c86f01c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -36,6 +39,9 @@
     </ClInclude>
     <ClInclude Include="TestDomain.h">
       <Filter>Test\Domains</Filter>
+    </ClInclude>
+    <ClInclude Include="TestEntity.h">
+      <Filter>Test\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="TestDomain.cpp">
       <Filter>Test\Domains</Filter>
+    </ClCompile>
+    <ClCompile Include="TestEntity.cpp">
+      <Filter>Test\Entities</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
