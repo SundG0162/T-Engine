@@ -1,12 +1,15 @@
 #include "pch.h"
 #include "Domain.h"
 #include "Layer.h"
+#include "RenderSetupLayer.h"
 #include "RenderLayer.h"
+#include "EntityRenderLayer.h"
 #include "UpdateLayer.h"
+#include "Entity.h"
+#include "RenderCore.h"
 
 Domain::Domain()
 {
-	memset(_layers, 0, sizeof(_layers));
 	setup();
 }
 
@@ -16,24 +19,35 @@ Domain::~Domain()
 
 void Domain::setup()
 {
-	{
-		RenderLayer* layer = new RenderLayer;
-		layer->setDomain(this);
-		addLayer(layer, LAYER_PRIORITY::RENDER);
-	}
+	_renderCore = new RenderCore;
 	{
 		UpdateLayer* layer = new UpdateLayer;
-		layer->setDomain(this);
-		addLayer(layer, LAYER_PRIORITY::UPDATE);
+		layer->init(this);
+		addLayer(layer, UPDATE_PRIORITY);
+	}
+	{
+		RenderSetupLayer* layer = new RenderSetupLayer;
+		layer->init(this);
+		addLayer(layer, RENDERSETUP_PRIORITY);
+	}
+	{
+		EntityRenderLayer* layer = new EntityRenderLayer;
+		layer->init(this);
+		addLayer(layer, ENTITYRENDER_PRIORITY);
+	}
+	{
+		RenderLayer* layer = new RenderLayer;
+		layer->init(this);
+		addLayer(layer, RENDER_PRIORITY);
 	}
 }
 
 void Domain::update()
 {
-	for (int i = (int)LAYER_PRIORITY::START + 1; i < (int)LAYER_PRIORITY::END; i++)
+	for (Layer* layer : _layers) 
 	{
-		if (_layers[i] != nullptr && _layers[i]->isActive())
-				_layers[i]->update();
+		if (layer->isActive())
+			layer->update();
 	}
 }
 
@@ -44,15 +58,19 @@ void Domain::release()
 		SAFE_DELETE(entity);
 	}
 	_entities.clear();
-	for (int i = (int)LAYER_PRIORITY::START + 1; i < (int)LAYER_PRIORITY::END; i++)
+	for (Layer* layer : _layers)
 	{
-		SAFE_DELETE(_layers[i]);
+		SAFE_DELETE(layer);
 	}
+	_layers.clear();
+	SAFE_DELETE(_renderCore);
 }
 
-void Domain::addLayer(Layer* layer, LAYER_PRIORITY priority)
+void Domain::addLayer(Layer* layer, int priority)
 {
-	_layers[(int)priority] = layer;
+	_layers.push_back(layer);
+	layer->setPriority(priority);
+	sort(_layers.begin(), _layers.end());
 }
 
 void Domain::removeLayer(Layer* layer)
@@ -61,8 +79,5 @@ void Domain::removeLayer(Layer* layer)
 
 void Domain::cleanUp()
 {
-	for (Layer* layer : _layers)
-	{
-		SAFE_DELETE(layer);
-	}
+	
 }

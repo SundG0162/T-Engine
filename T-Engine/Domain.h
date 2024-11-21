@@ -2,6 +2,7 @@
 #include "LayerPriority.h"
 class Entity;
 class Layer;
+class RenderCore;
 class Domain
 {
 public:
@@ -13,12 +14,13 @@ public:
 	virtual void update();
 	virtual void release();
 public:
-	void addLayer(Layer* layer, LAYER_PRIORITY priority);
+	void addLayer(Layer* layer, int priority);
 	void removeLayer(Layer* layer);
 	void cleanUp();
 public:
+	RenderCore* getRenderCore() { return _renderCore; }
 	const vector<Entity*>& getEntities() { return _entities; }
-	Layer* getLayer(const LAYER_PRIORITY& priority) { return _layers[(int)priority]; }
+	const Layer* getLayer(const LAYER_PRIORITY& priority) { return _layers[(int)priority]; }
 	template<typename T>
 	T* getLayer()
 	{
@@ -32,6 +34,7 @@ public:
 		return layer;
 	}
 protected:
+	RenderCore* _renderCore;
 	vector<Entity*> _entities;
-	Layer* _layers[(int)LAYER_PRIORITY::END];
+	vector<Layer*> _layers;
 };

@@ -10,5 +10,5 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 {
     std::shared_ptr<MyNexus> myNexus = std::make_shared<MyNexus>();
     myNexus->ignite(hInstance, lpCmdLine, nCmdShow);
-    _CrtDumpMemoryLeaks();
+    //_CrtDumpMemoryLeaks();
 }

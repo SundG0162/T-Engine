@@ -159,8 +159,11 @@
     <ClInclude Include="LayerPriority.h" />
     <ClInclude Include="Nexus.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RenderCore.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="EntityRenderLayer.h" />
     <ClInclude Include="RenderLayer.h" />
+    <ClInclude Include="RenderSetupLayer.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureRenderer.h" />
@@ -176,8 +179,11 @@
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Nexus.cpp" />
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="RenderCore.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="EntityRenderLayer.cpp" />
     <ClCompile Include="RenderLayer.cpp" />
+    <ClCompile Include="RenderSetupLayer.cpp" />
     <ClCompile Include="Resource.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureRenderer.cpp" />

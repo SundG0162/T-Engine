@@ -50,6 +50,14 @@ public:                         \
 
 #define GET_SINGLETON(type) type::getInstance()
 
+#define UPDATE_PRIORITY 1000
+#define RENDERSETUP_PRIORITY 2000
+#define ENTITYRENDER_PRIORITY 3000
+#define RENDER_PRIORITY 4000
+
+#define MAIN_DC GET_SINGLETON(DomainManager)->getCurrentDomain()->getRenderCore()->getMainDC()
+#define BACK_DC GET_SINGLETON(DomainManager)->getCurrentDomain()->getRenderCore()->getBackDC()
+
 #define _CRTDEBG_MAP_ALLOC
 
 #include<crtdbg.h>

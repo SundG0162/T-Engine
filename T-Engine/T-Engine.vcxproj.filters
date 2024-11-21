@@ -46,7 +46,7 @@
     <ClCompile Include="Layer.cpp">
       <Filter>Engine\02.Layers</Filter>
     </ClCompile>
-    <ClCompile Include="RenderLayer.cpp">
+    <ClCompile Include="EntityRenderLayer.cpp">
       <Filter>Engine\02.Layers</Filter>
     </ClCompile>
     <ClCompile Include="UpdateLayer.cpp">
@@ -79,6 +79,15 @@
     <ClCompile Include="TextureRenderer.cpp">
       <Filter>Engine\03.Component</Filter>
     </ClCompile>
+    <ClCompile Include="RenderCore.cpp">
+      <Filter>Engine\00.Core</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSetupLayer.cpp">
+      <Filter>Engine\02.Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderLayer.cpp">
+      <Filter>Engine\02.Layers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
@@ -93,7 +102,7 @@
     <ClInclude Include="Layer.h">
       <Filter>Engine\02.Layers</Filter>
     </ClInclude>
-    <ClInclude Include="RenderLayer.h">
+    <ClInclude Include="EntityRenderLayer.h">
       <Filter>Engine\02.Layers</Filter>
     </ClInclude>
     <ClInclude Include="LayerPriority.h">
@@ -128,6 +137,15 @@
     </ClInclude>
     <ClInclude Include="TextureRenderer.h">
       <Filter>Engine\03.Component</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderCore.h">
+      <Filter>Engine\00.Core</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSetupLayer.h">
+      <Filter>Engine\02.Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderLayer.h">
+      <Filter>Engine\02.Layers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
