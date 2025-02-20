@@ -1,7 +1,10 @@
 #pragma once
-enum class LAYER_TYPE
+namespace TEngine
 {
-	REPEAT,
-	ONCE,
-	FUNCTIONAL
-};
+	enum class LAYER_TYPE
+	{
+		REPEAT,
+		ONCE,
+		FUNCTIONAL
+	};
+}

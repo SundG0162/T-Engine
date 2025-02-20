@@ -2,25 +2,27 @@
 #include "UpdateLayer.h"
 #include "Domain.h"
 #include "Entity.h"
-
-UpdateLayer::UpdateLayer()
+namespace TEngine
 {
-}
-
-UpdateLayer::~UpdateLayer()
-{
-}
-
-void UpdateLayer::initialize(Domain* domain)
-{
-	_domain = domain;
-}
-
-void UpdateLayer::perform()
-{
-	const vector<Entity*>& entities = _domain->getEntities();
-	for (Entity* entity : entities)
+	UpdateLayer::UpdateLayer()
 	{
-		entity->update();
+	}
+
+	UpdateLayer::~UpdateLayer()
+	{
+	}
+
+	void UpdateLayer::initialize(Domain* domain)
+	{
+		_domain = domain;
+	}
+
+	void UpdateLayer::perform()
+	{
+		const vector<Entity*>& entities = _domain->getEntities();
+		for (Entity* entity : entities)
+		{
+			entity->update();
+		}
 	}
 }

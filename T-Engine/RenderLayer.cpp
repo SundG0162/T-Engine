@@ -2,22 +2,24 @@
 #include "RenderLayer.h"
 #include "Domain.h"
 #include "RenderCore.h"
-
-RenderLayer::RenderLayer()
+namespace TEngine
 {
-}
+	RenderLayer::RenderLayer()
+	{
+	}
 
-RenderLayer::~RenderLayer()
-{
-}
+	RenderLayer::~RenderLayer()
+	{
+	}
 
-void RenderLayer::initialize(Domain* domain)
-{
-	_domain = domain;
-	_renderCore = _domain->getRenderCore();
-}
+	void RenderLayer::initialize(Domain* domain)
+	{
+		_domain = domain;
+		_renderCore = _domain->getRenderCore();
+	}
 
-void RenderLayer::perform()
-{
-	_renderCore->render();
+	void RenderLayer::perform()
+	{
+		_renderCore->render();
+	}
 }

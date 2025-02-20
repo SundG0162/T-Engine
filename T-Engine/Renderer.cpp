@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "Renderer.h"
-
-Renderer::Renderer()
+namespace TEngine
 {
-}
+	Renderer::Renderer()
+	{
+	}
 
-Renderer::~Renderer()
-{
+	Renderer::~Renderer()
+	{
+	}
 }

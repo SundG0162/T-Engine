@@ -1,7 +1,6 @@
 #pragma once
 
 #pragma comment(lib, "T-Engine.lib")
-
 #include<Windows.h>
 #include<tchar.h>
 #include<memory>
@@ -55,6 +54,8 @@ public:                         \
 #define ENTITYRENDER_PRIORITY 3000
 #define RENDER_PRIORITY 4000
 
+#define END_NAMESPACE }
+
 #define MAIN_DC GET_SINGLETON(DomainManager)->getCurrentDomain()->getRenderCore()->getMainDC()
 #define BACK_DC GET_SINGLETON(DomainManager)->getCurrentDomain()->getRenderCore()->getBackDC()
 
@@ -65,4 +66,9 @@ public:                         \
 #define new new(_NORMAL_BLOCK, __FILE__, __LINE__)
 #endif
 
-extern std::shared_ptr<class T_Nexus> nexus;
+namespace TEngine
+{
+	extern std::shared_ptr<class T_Nexus> nexus;
+}
+
+using namespace TEngine;

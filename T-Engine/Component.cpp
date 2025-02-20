@@ -1,11 +1,13 @@
 #include "pch.h"
 #include "Component.h"
-
-Component::Component()
-	: _owner(nullptr)
+namespace TEngine
 {
-}
+	Component::Component()
+		: _owner(nullptr)
+	{
+	}
 
-Component::~Component()
-{
+	Component::~Component()
+	{
+	}
 }

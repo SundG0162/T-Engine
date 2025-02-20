@@ -154,9 +154,9 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Domain.h" />
     <ClInclude Include="DomainManager.h" />
+    <ClInclude Include="LayerType.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Layer.h" />
-    <ClInclude Include="LayerPriority.h" />
     <ClInclude Include="Nexus.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RenderCore.h" />

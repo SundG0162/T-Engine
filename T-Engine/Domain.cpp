@@ -7,77 +7,79 @@
 #include "UpdateLayer.h"
 #include "Entity.h"
 #include "RenderCore.h"
-
-Domain::Domain()
+namespace TEngine
 {
-	setup();
-}
-
-Domain::~Domain()
-{
-}
-
-void Domain::setup()
-{
-	_renderCore = new RenderCore;
+	Domain::Domain()
 	{
-		UpdateLayer* layer = new UpdateLayer;
-		layer->initialize(this);
-		addLayer(layer, UPDATE_PRIORITY);
+		setup();
 	}
-	{
-		RenderSetupLayer* layer = new RenderSetupLayer;
-		layer->initialize(this);
-		addLayer(layer, RENDERSETUP_PRIORITY);
-	}
-	{
-		EntityRenderLayer* layer = new EntityRenderLayer;
-		layer->initialize(this);
-		addLayer(layer, ENTITYRENDER_PRIORITY);
-	}
-	{
-		RenderLayer* layer = new RenderLayer;
-		layer->initialize(this);
-		addLayer(layer, RENDER_PRIORITY);
-	}
-}
 
-void Domain::update()
-{
-	for (Layer* layer : _layers) 
+	Domain::~Domain()
 	{
-		if (layer->isActive())
-			layer->perform();
 	}
-}
 
-void Domain::release()
-{
-	for (Entity* entity : _entities)
+	void Domain::setup()
 	{
-		SAFE_DELETE(entity);
+		_renderCore = new RenderCore;
+		{
+			UpdateLayer* layer = new UpdateLayer;
+			layer->initialize(this);
+			addLayer(layer, UPDATE_PRIORITY);
+		}
+		{
+			RenderSetupLayer* layer = new RenderSetupLayer;
+			layer->initialize(this);
+			addLayer(layer, RENDERSETUP_PRIORITY);
+		}
+		{
+			EntityRenderLayer* layer = new EntityRenderLayer;
+			layer->initialize(this);
+			addLayer(layer, ENTITYRENDER_PRIORITY);
+		}
+		{
+			RenderLayer* layer = new RenderLayer;
+			layer->initialize(this);
+			addLayer(layer, RENDER_PRIORITY);
+		}
 	}
-	_entities.clear();
-	for (Layer* layer : _layers)
+
+	void Domain::update()
 	{
-		SAFE_DELETE(layer);
+		for (Layer* layer : _layers)
+		{
+			if (layer->isActive())
+				layer->perform();
+		}
 	}
-	_layers.clear();
-	SAFE_DELETE(_renderCore);
-}
 
-void Domain::addLayer(Layer* layer, int priority)
-{
-	_layers.push_back(layer);
-	layer->setPriority(priority);
-	sort(_layers.begin(), _layers.end());
-}
+	void Domain::release()
+	{
+		for (Entity* entity : _entities)
+		{
+			SAFE_DELETE(entity);
+		}
+		_entities.clear();
+		for (Layer* layer : _layers)
+		{
+			SAFE_DELETE(layer);
+		}
+		_layers.clear();
+		SAFE_DELETE(_renderCore);
+	}
 
-void Domain::removeLayer(Layer* layer)
-{
-}
+	void Domain::addLayer(Layer* layer, int priority)
+	{
+		_layers.push_back(layer);
+		layer->setPriority(priority);
+		sort(_layers.begin(), _layers.end());
+	}
 
-void Domain::cleanUp()
-{
-	
+	void Domain::removeLayer(Layer* layer)
+	{
+	}
+
+	void Domain::cleanUp()
+	{
+
+	}
 }

@@ -105,9 +105,6 @@
     <ClInclude Include="EntityRenderLayer.h">
       <Filter>Engine\02.Layers</Filter>
     </ClInclude>
-    <ClInclude Include="LayerPriority.h">
-      <Filter>Engine\02.Layers</Filter>
-    </ClInclude>
     <ClInclude Include="UpdateLayer.h">
       <Filter>Engine\02.Layers</Filter>
     </ClInclude>
@@ -145,6 +142,9 @@
       <Filter>Engine\02.Layers</Filter>
     </ClInclude>
     <ClInclude Include="RenderLayer.h">
+      <Filter>Engine\02.Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="LayerType.h">
       <Filter>Engine\02.Layers</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "Resource.h"
-
-Resource::Resource()
+namespace TEngine
 {
-}
+	Resource::Resource()
+	{
+	}
 
-Resource::~Resource()
-{
+	Resource::~Resource()
+	{
+	}
 }

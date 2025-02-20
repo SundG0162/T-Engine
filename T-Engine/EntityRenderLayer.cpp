@@ -5,31 +5,32 @@
 #include "Renderer.h"
 #include "T_Nexus.h"
 #include "RenderCore.h"
-
-EntityRenderLayer::EntityRenderLayer()
+namespace TEngine
 {
-}
-
-EntityRenderLayer::~EntityRenderLayer()
-{
-}
-
-void EntityRenderLayer::initialize(Domain* domain)
-{
-	_domain = domain;
-	_renderCore = _domain->getRenderCore();
-}
-
-void EntityRenderLayer::perform()
-{
-	const vector<Entity*>& entities = _domain->getEntities();
-	for (Entity* entity : entities)
+	EntityRenderLayer::EntityRenderLayer()
 	{
-		Renderer* renderer = entity->getComponent<Renderer>();
-		if (renderer != nullptr)
+	}
+
+	EntityRenderLayer::~EntityRenderLayer()
+	{
+	}
+
+	void EntityRenderLayer::initialize(Domain* domain)
+	{
+		_domain = domain;
+		_renderCore = _domain->getRenderCore();
+	}
+
+	void EntityRenderLayer::perform()
+	{
+		const vector<Entity*>& entities = _domain->getEntities();
+		for (Entity* entity : entities)
 		{
-			renderer->render(_renderCore->getBackDC());
+			Renderer* renderer = entity->getComponent<Renderer>();
+			if (renderer != nullptr)
+			{
+				renderer->render(_renderCore->getBackDC());
+			}
 		}
 	}
 }
-

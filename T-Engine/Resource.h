@@ -1,8 +1,10 @@
 #pragma once
-class Resource
+namespace TEngine
 {
-public:
-	Resource();
-	virtual ~Resource();
-};
-
+	class Resource
+	{
+	public:
+		Resource();
+		virtual ~Resource();
+	};
+}

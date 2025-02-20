@@ -1,15 +1,17 @@
 #pragma once
 #include "Layer.h"
-class RenderCore;
-class RenderSetupLayer : public Layer
+namespace TEngine
 {
-public:
-	RenderSetupLayer();
-	~RenderSetupLayer();
-public:
-	void initialize(Domain* domain) override;
-	void perform() override;
-private:
-	RenderCore* _renderCore;
-};
-
+	class RenderCore;
+	class RenderSetupLayer : public Layer
+	{
+	public:
+		RenderSetupLayer();
+		~RenderSetupLayer();
+	public:
+		void initialize(Domain* domain) override;
+		void perform() override;
+	private:
+		RenderCore* _renderCore;
+	};
+}

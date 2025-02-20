@@ -2,22 +2,24 @@
 #include "RenderSetupLayer.h"
 #include "Domain.h"
 #include "RenderCore.h"
-
-RenderSetupLayer::RenderSetupLayer()
+namespace TEngine
 {
-}
+	RenderSetupLayer::RenderSetupLayer()
+	{
+	}
 
-RenderSetupLayer::~RenderSetupLayer()
-{
-}
+	RenderSetupLayer::~RenderSetupLayer()
+	{
+	}
 
-void RenderSetupLayer::initialize(Domain* domain)
-{
-	_domain = domain;
-	_renderCore = _domain->getRenderCore();
-}
+	void RenderSetupLayer::initialize(Domain* domain)
+	{
+		_domain = domain;
+		_renderCore = _domain->getRenderCore();
+	}
 
-void RenderSetupLayer::perform()
-{
-	_renderCore->renderSetup();
+	void RenderSetupLayer::perform()
+	{
+		_renderCore->renderSetup();
+	}
 }

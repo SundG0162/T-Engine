@@ -1,11 +1,13 @@
 #include "pch.h"
 #include "Layer.h"
-
-Layer::Layer()
+namespace TEngine
 {
-	_isActive = true; 
-}
+	Layer::Layer()
+	{
+		_isActive = true;
+	}
 
-Layer::~Layer()
-{
+	Layer::~Layer()
+	{
+	}
 }

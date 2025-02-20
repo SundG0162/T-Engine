@@ -1,10 +1,12 @@
 #include "pch.h"
 #include "Entity.h"
-
-Entity::Entity()
+namespace TEngine
 {
-}
+	Entity::Entity()
+	{
+	}
 
-Entity::~Entity()
-{
+	Entity::~Entity()
+	{
+	}
 }
