@@ -22,22 +22,22 @@ void Domain::setup()
 	_renderCore = new RenderCore;
 	{
 		UpdateLayer* layer = new UpdateLayer;
-		layer->init(this);
+		layer->initialize(this);
 		addLayer(layer, UPDATE_PRIORITY);
 	}
 	{
 		RenderSetupLayer* layer = new RenderSetupLayer;
-		layer->init(this);
+		layer->initialize(this);
 		addLayer(layer, RENDERSETUP_PRIORITY);
 	}
 	{
 		EntityRenderLayer* layer = new EntityRenderLayer;
-		layer->init(this);
+		layer->initialize(this);
 		addLayer(layer, ENTITYRENDER_PRIORITY);
 	}
 	{
 		RenderLayer* layer = new RenderLayer;
-		layer->init(this);
+		layer->initialize(this);
 		addLayer(layer, RENDER_PRIORITY);
 	}
 }

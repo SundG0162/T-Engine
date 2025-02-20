@@ -11,8 +11,8 @@ public:
 		return _priority < other.getPriority();
 	}
 public:
-	virtual void init(Domain* domain) abstract;
-	virtual void update() abstract;
+	virtual void initialize(Domain* domain) abstract;
+	virtual void perform() abstract;
 public:
 	void setPriority(int& priority) { _priority = priority; }
 	const int& getPriority() const { return _priority; }

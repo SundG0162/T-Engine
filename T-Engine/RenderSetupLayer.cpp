@@ -11,7 +11,7 @@ RenderSetupLayer::~RenderSetupLayer()
 {
 }
 
-void RenderSetupLayer::init(Domain* domain)
+void RenderSetupLayer::initialize(Domain* domain)
 {
 	_domain = domain;
 	_renderCore = _domain->getRenderCore();

@@ -6,7 +6,7 @@ public:
 	UpdateLayer();
 	~UpdateLayer();
 public:
-	void init(Domain* domain) override;
+	void initialize(Domain* domain) override;
 	void perform() override;
 };
 

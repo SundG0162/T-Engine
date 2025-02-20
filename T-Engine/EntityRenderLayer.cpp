@@ -14,7 +14,7 @@ EntityRenderLayer::~EntityRenderLayer()
 {
 }
 
-void EntityRenderLayer::init(Domain* domain)
+void EntityRenderLayer::initialize(Domain* domain)
 {
 	_domain = domain;
 	_renderCore = _domain->getRenderCore();

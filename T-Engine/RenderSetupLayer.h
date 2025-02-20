@@ -7,7 +7,7 @@ public:
 	RenderSetupLayer();
 	~RenderSetupLayer();
 public:
-	void init(Domain* domain) override;
+	void initialize(Domain* domain) override;
 	void perform() override;
 private:
 	RenderCore* _renderCore;

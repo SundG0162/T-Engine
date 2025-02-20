@@ -11,12 +11,12 @@ UpdateLayer::~UpdateLayer()
 {
 }
 
-void UpdateLayer::init(Domain* domain)
+void UpdateLayer::initialize(Domain* domain)
 {
 	_domain = domain;
 }
 
-void UpdateLayer::update()
+void UpdateLayer::perform()
 {
 	const vector<Entity*>& entities = _domain->getEntities();
 	for (Entity* entity : entities)
