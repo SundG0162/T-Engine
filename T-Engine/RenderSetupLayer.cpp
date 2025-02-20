@@ -17,7 +17,7 @@ void RenderSetupLayer::init(Domain* domain)
 	_renderCore = _domain->getRenderCore();
 }
 
-void RenderSetupLayer::update()
+void RenderSetupLayer::perform()
 {
 	_renderCore->renderSetup();
 }

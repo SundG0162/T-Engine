@@ -17,7 +17,7 @@ void RenderLayer::init(Domain* domain)
 	_renderCore = _domain->getRenderCore();
 }
 
-void RenderLayer::update()
+void RenderLayer::perform()
 {
 	_renderCore->render();
 }

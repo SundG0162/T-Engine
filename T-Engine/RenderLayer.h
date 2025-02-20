@@ -8,7 +8,7 @@ public:
 	~RenderLayer();
 public:
 	void init(Domain* domain) override;
-	void update() override;
+	void perform() override;
 private:
 	RenderCore* _renderCore;
 };

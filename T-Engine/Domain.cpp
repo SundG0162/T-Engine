@@ -47,7 +47,7 @@ void Domain::update()
 	for (Layer* layer : _layers) 
 	{
 		if (layer->isActive())
-			layer->update();
+			layer->perform();
 	}
 }
 

@@ -20,7 +20,7 @@ void EntityRenderLayer::init(Domain* domain)
 	_renderCore = _domain->getRenderCore();
 }
 
-void EntityRenderLayer::update()
+void EntityRenderLayer::perform()
 {
 	const vector<Entity*>& entities = _domain->getEntities();
 	for (Entity* entity : entities)
