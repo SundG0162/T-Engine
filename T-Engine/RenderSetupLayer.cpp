@@ -4,7 +4,7 @@
 #include "RenderCore.h"
 namespace TEngine
 {
-	RenderSetupLayer::RenderSetupLayer()
+	RenderSetupLayer::RenderSetupLayer() : Layer(LayerType::Repeat)
 	{
 	}
 

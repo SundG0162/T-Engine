@@ -1,11 +1,12 @@
 #pragma once
+#include "LayerType.h"
 namespace TEngine
 {
 	class Domain;
 	class Layer
 	{
 	public:
-		Layer();
+		Layer(LayerType layerType);
 		virtual ~Layer();
 
 		bool operator<(const Layer& other)
@@ -20,6 +21,7 @@ namespace TEngine
 		const int& getPriority() const { return _priority; }
 		const bool& isActive() const { return _isActive; }
 	protected:
+		LayerType _layerType;
 		int _priority;
 		Domain* _domain;
 		bool _isActive;

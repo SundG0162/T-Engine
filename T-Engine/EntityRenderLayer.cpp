@@ -7,7 +7,8 @@
 #include "RenderCore.h"
 namespace TEngine
 {
-	EntityRenderLayer::EntityRenderLayer()
+	EntityRenderLayer::EntityRenderLayer() : Layer(LayerType::Repeat)
+		,_renderCore(nullptr)
 	{
 	}
 

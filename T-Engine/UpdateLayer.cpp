@@ -4,7 +4,7 @@
 #include "Entity.h"
 namespace TEngine
 {
-	UpdateLayer::UpdateLayer()
+	UpdateLayer::UpdateLayer() : Layer(LayerType::Repeat)
 	{
 	}
 
