@@ -153,8 +153,5 @@
     <ClInclude Include="FunctionalLayer.h">
       <Filter>Engine\02.Layers\Functional</Filter>
     </ClInclude>
-    <ClInclude Include="ILayerFunction.h">
-      <Filter>Engine\02.Layers\Functional</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

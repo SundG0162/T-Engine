@@ -7,11 +7,11 @@
 #include "UpdateLayer.h"
 #include "Entity.h"
 #include "RenderCore.h"
+#include "T_Nexus.h"
 namespace TEngine
 {
 	Domain::Domain()
 	{
-		setup();
 	}
 
 	Domain::~Domain()
@@ -20,27 +20,7 @@ namespace TEngine
 
 	void Domain::setup()
 	{
-		_renderCore = new RenderCore;
-		{
-			UpdateLayer* layer = new UpdateLayer;
-			layer->initialize(this);
-			addLayer(layer, UPDATE_PRIORITY);
-		}
-		{
-			RenderSetupLayer* layer = new RenderSetupLayer;
-			layer->initialize(this);
-			addLayer(layer, RENDERSETUP_PRIORITY);
-		}
-		{
-			EntityRenderLayer* layer = new EntityRenderLayer;
-			layer->initialize(this);
-			addLayer(layer, ENTITYRENDER_PRIORITY);
-		}
-		{
-			RenderLayer* layer = new RenderLayer;
-			layer->initialize(this);
-			addLayer(layer, RENDER_PRIORITY);
-		}
+		
 	}
 
 	void Domain::update()
@@ -48,7 +28,9 @@ namespace TEngine
 		for (Layer* layer : _layers)
 		{
 			if (layer->isActive())
+			{
 				layer->perform();
+			}
 		}
 	}
 

@@ -6,7 +6,7 @@ namespace TEngine
 	{
 	public:
 		Entity();
-		~Entity();
+		virtual ~Entity() = default;
 	public:
 		virtual void update() abstract;
 	public:

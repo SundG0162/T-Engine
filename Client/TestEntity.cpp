@@ -8,16 +8,26 @@ TestEntity::TestEntity()
 {
 	Texture* texture = new Texture;
 	fs::path path = fs::current_path();
-	MessageBox(nexus->getHWnd(), path.wstring().c_str(), L"ASD", MB_OK);
 	//texture->loadBMP();
 	TextureRenderer* renderer = addComponent<TextureRenderer>();
 	//renderer->setTexture();
 }
 
 TestEntity::~TestEntity()
-{ 
+{
 }
 
 void TestEntity::update()
 {
+	MessageBox(nexus->getHWnd(), L"Update", L"ASD", MB_OK);
+}
+
+void TestEntity::executeProto()
+{
+	MessageBox(nexus->getHWnd(), L"ProtoLayer", L"ASD", MB_OK);
+}
+
+void TestEntity::executeTest()
+{
+	MessageBox(nexus->getHWnd(), L"TestLayer", L"ASD", MB_OK);
 }

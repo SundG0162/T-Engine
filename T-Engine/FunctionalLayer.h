@@ -3,20 +3,27 @@
 #include "ILayerFunction.h"
 #include "Domain.h"
 #include <concepts>
+#include <functional>
 namespace TEngine
 {
+
 	template <typename T>
-	concept LayerFunction = std::derived_from<T, ILayerFunction>;
+	concept LayerFunction = std::is_class_v<T>;
 
 	template<typename T>
 		requires LayerFunction<T>
 	class FunctionalLayer : public Layer
 	{
 	public:
+		FunctionalLayer(LayerType layerType) {}
+		virtual ~FunctionalLayer() {}
+	public:
 		void initialize(Domain* domain) override;
 		void perform() override;
-	private:
+		void setFunction(void (T::* func)()) { _function = func; }
+	protected:
 		std::vector<T*> _targetEntityVector;
+		void (T::* _function)();
 	};
 
 	template<typename T>
@@ -26,8 +33,9 @@ namespace TEngine
 		const std::vector<Entity*> entities = domain->getEntities();
 		for (int i = 0; i < entities.size(); i++)
 		{
-			T* layerFunction = dynamic_cast<T*>(entities[i]);
-			_targetEntityVector.push_back(layerFunction);
+			T* layerFunction = (T*)entities[i];
+			if(layerFunction != nullptr)
+				_targetEntityVector.push_back(layerFunction);
 		}
 	}
 
@@ -37,7 +45,8 @@ namespace TEngine
 	{
 		for (int i = 0; i < _targetEntityVector.size(); i++)
 		{
-			_targetEntityVector[i].execute();
+			auto func = std::bind(_function, _targetEntityVector[i]);
+			func();
 		}
 	}
 }

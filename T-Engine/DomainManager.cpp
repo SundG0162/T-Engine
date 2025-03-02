@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "DomainManager.h"
 #include "Domain.h"
+#include "T_Nexus.h"
 namespace TEngine
 {
 	void DomainManager::update()
@@ -19,6 +20,7 @@ namespace TEngine
 
 	void DomainManager::loadDomain(const wstring& name)
 	{
+
 		if (_currentDomain != nullptr)
 		{
 			_currentDomain->release();
