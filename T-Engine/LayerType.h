@@ -3,8 +3,7 @@ namespace TEngine
 {
 	enum class LayerType
 	{
-		Repeat,
-		Once,
-		Functional
+		Repeat = 1,
+		Once = 2,
 	};
 }
