@@ -11,6 +11,7 @@
 namespace TEngine
 {
 	Domain::Domain()
+		: _renderCore(nullptr)
 	{
 	}
 

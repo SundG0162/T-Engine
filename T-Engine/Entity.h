@@ -8,7 +8,7 @@ namespace TEngine
 		Entity();
 		virtual ~Entity() = default;
 	public:
-		virtual void update() abstract;
+		virtual void update() = 0;
 	public:
 		template<typename T>
 		T* getComponent()
