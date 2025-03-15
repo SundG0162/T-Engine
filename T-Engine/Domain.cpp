@@ -10,8 +10,8 @@
 namespace TEngine
 {
 	Domain::Domain()
+		: OnEntityAddedEvent()
 	{
-		setup();
 	}
 
 	Domain::~Domain()
@@ -76,6 +76,13 @@ namespace TEngine
 
 	void Domain::removeLayer(Layer* layer)
 	{
+	}
+
+	
+
+	void Domain::removeEntity(Entity* entity)
+	{
+		_entities.erase(std::find(_entities.begin(), _entities.end(), entity));
 	}
 
 	void Domain::cleanUp()

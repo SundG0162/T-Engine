@@ -17,9 +17,8 @@ namespace TEngine
 		~Delegate();
 	public:
 		template<ISCLASS INST>
-		void addCallback(void* instance, void(INST::*function)(Args...));
-		template<ISCLASS INST>
-		void removeCallback(void* instance, void(INST::* function)(Args...));
+		void addCallback(void* instance, void(INST::* function)(Args...));
+		void removeAllCallbacks(void* instance);
 		void invoke(Args... args);
 	private:
 		std::vector<Callback> _callbackVector;
@@ -28,6 +27,7 @@ namespace TEngine
 
 	template<typename ...Args>
 	inline Delegate<Args...>::Delegate()
+		: _callbackVector()
 	{
 	}
 
@@ -38,17 +38,36 @@ namespace TEngine
 
 
 	template<typename ...Args>
+	inline void Delegate<Args...>::removeAllCallbacks(void* instance)
+	{
+		auto it = _callbackMap.find(instance);
+		if (it != _callbackMap.end())
+		{
+			const auto& instanceCallbacks = it->second;
+			_callbackVector.erase(
+				std::remove_if(_callbackVector.begin(), _callbackVector.end(),
+					[&instanceCallbacks](const Callback& callback) 
+					{
+						return std::find(instanceCallbacks.begin(), instanceCallbacks.end(), callback) != instanceCallbacks.end();
+					}),
+				_callbackVector.end());
+
+			_callbackMap.erase(it);
+		}
+	}
+
+	template<typename ...Args>
 	inline void Delegate<Args...>::invoke(Args... args)
 	{
-		auto removeBegin =
-			std::remove_if(_callbackVector.begin(), _callbackVector.end(),
-				[&](const Callback& callback) {
-					return !callback;
-				});
-		_callbackVector.erase(removeBegin, _callbackVector.end());
-		for (Callback callback : _callbackVector)
+		for (size_t i = 0; i < _callbackVector.size();)
 		{
-			callback(args);
+			if (_callbackVector[i]) {
+				_callbackVector[i](args...);
+				++i;
+			}
+			else {
+				_callbackVector.erase(_callbackVector.begin() + i);
+			}
 		}
 	}
 
@@ -57,37 +76,12 @@ namespace TEngine
 	inline void Delegate<Args...>::addCallback(void* instance, void(INST::* function)(Args...))
 	{
 		INST* inst = static_cast<INST*>(instance);
-		auto bindedFunc = std::bind(function, inst, std::placeholders::_1);
+		auto bindedFunc = [inst, function](Args... args) 
+			{
+				(inst->*function)(args...);
+			};
 		_callbackVector.push_back(bindedFunc);
 		_callbackMap[instance].push_back(bindedFunc);
-	}
-
-	template<typename ...Args>
-	template<ISCLASS INST>
-	inline void Delegate<Args...>::removeCallback(void* instance, void(INST::* function)(Args...))
-	{
-		if (_callbackMap.find(instance) != _callbackMap.end())
-		{
-			auto& callbacks = _callbackMap[instance];
-			callbacks.erase(
-				std::remove_if(callbacks.begin(), callbacks.end(),
-					[&](const Callback& cb) {
-						return cb.target<void(INST::*)(Args...)>() == &function;
-					}),
-				callbacks.end()
-			);
-
-			_callbackVector.erase(
-				std::remove_if(_callbackVector.begin(), _callbackVector.end(),
-					[&](const Callback& cb) {
-						return cb.target<void(INST::*)(Args...)>() == &function;
-					}),
-				_callbackVector.end()
-			);
-
-			if (callbacks.empty())
-				_callbackMap.erase(instance);
-		}
 	}
 }
 

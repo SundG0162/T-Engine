@@ -1,6 +1,7 @@
 #pragma once
 #include "pch.h"
 #include "Layer.h"
+#include "Domain.h"
 #include "Entity.h"
 #include <concepts>
 #include <functional>
@@ -17,8 +18,11 @@ namespace TEngine
 		FunctionalLayer(LayerType layerType);
 		virtual ~FunctionalLayer();
 	public:
+		void initialize(Domain* domain) override;
 		void perform();
 		void setFunction(Function func) { _function = func; }
+	public:
+		void handleOnEntityAddedEvent(Entity* entity);
 	private:
 		std::vector<Entity*> _targetEntityVector;
 		Function _function;
@@ -33,6 +37,14 @@ namespace TEngine
 	inline FunctionalLayer<T>::~FunctionalLayer()
 	{
 	}
+
+	template<LayerFunction T>
+	inline void FunctionalLayer<T>::initialize(Domain* domain)
+	{
+		Layer::initialize(domain);
+		domain->OnEntityAddedEvent.addCallback<FuntionalLayer<T>>(this, handleOnEntityAddedEvent);
+	}
+
 	template<LayerFunction T>
 	inline void FunctionalLayer<T>::perform()
 	{
@@ -40,6 +52,16 @@ namespace TEngine
 		{
 			auto bindedFunc = std::bind(_function, entity);
 			bindedFunc();
+		}
+	}
+
+	template<LayerFunction T>
+	inline void FunctionalLayer<T>::handleOnEntityAddedEvent(Entity* entity)
+	{
+		T* layerFunc = dynamic_cast<T*>(entity);
+		if (layerFunc)
+		{
+			_targetEntityVector.push_back(entity);
 		}
 	}
 }

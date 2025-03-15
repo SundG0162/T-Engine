@@ -13,5 +13,5 @@ TestDomain::~TestDomain()
 void TestDomain::init()
 {
 	TestEntity* entity = new TestEntity;
-	_entities.push_back(entity);
+	addEntity(entity);
 }

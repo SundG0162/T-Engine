@@ -1,4 +1,5 @@
 #pragma once
+#include "Delegate.h"
 namespace TEngine
 {
 	class Entity;
@@ -17,10 +18,16 @@ namespace TEngine
 	public:
 		void addLayer(Layer* layer, int priority);
 		void removeLayer(Layer* layer);
+		inline void addEntity(Entity* entity)
+		{
+			_entities.push_back(entity);
+			OnEntityAddedEvent.invoke(entity);
+		}
+		void removeEntity(Entity* entity);
 		void cleanUp();
 	public:
 		RenderCore* getRenderCore() { return _renderCore; }
-		const vector<Entity*>& getEntities() { return _entities; }
+		const std::vector<Entity*>& getEntities() { return _entities; }
 		template<typename T>
 		T* getLayer()
 		{
@@ -33,9 +40,12 @@ namespace TEngine
 			}
 			return layer;
 		}
+	public:
+		Delegate<Entity*> OnEntityAddedEvent;
 	protected:
 		RenderCore* _renderCore;
-		vector<Entity*> _entities;
-		vector<Layer*> _layers;
+	private:
+		std::vector<Entity*> _entities;
+		std::vector<Layer*> _layers;
 	};
 }
