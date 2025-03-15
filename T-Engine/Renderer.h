@@ -8,7 +8,7 @@ namespace TEngine
 		Renderer();
 		~Renderer();
 	public:
-		virtual void render(HDC hdc) abstract;
+		virtual void render(HDC hdc) = 0;
 	};
 }
 

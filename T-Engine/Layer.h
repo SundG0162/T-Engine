@@ -15,7 +15,7 @@ namespace TEngine
 		}
 	public:
 		virtual void initialize(Domain* domain);
-		virtual void perform() abstract;
+		virtual void perform() = 0;
 	public:
 		void setPriority(int& priority) { _priority = priority; }
 		const int& getPriority() const { return _priority; }
