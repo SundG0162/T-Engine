@@ -14,7 +14,7 @@ namespace TEngine
 			return _priority < other.getPriority();
 		}
 	public:
-		virtual void initialize(Domain* domain) abstract;
+		virtual void initialize(Domain* domain);
 		virtual void perform() abstract;
 	public:
 		void setPriority(int& priority) { _priority = priority; }

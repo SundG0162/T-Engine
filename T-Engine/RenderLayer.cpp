@@ -14,7 +14,7 @@ namespace TEngine
 
 	void RenderLayer::initialize(Domain* domain)
 	{
-		_domain = domain;
+		Layer::initialize(domain);
 		_renderCore = _domain->getRenderCore();
 	}
 

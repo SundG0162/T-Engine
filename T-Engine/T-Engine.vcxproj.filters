@@ -32,6 +32,9 @@
     <Filter Include="Engine\06.Utils">
       <UniqueIdentifier>{c2902ddf-2eb0-4f35-ab9a-9536814bf34b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\02.Layers\FunctionalLayer">
+      <UniqueIdentifier>{189ac2f6-34b0-469d-b7d6-2e07d7759c68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nexus.cpp">
@@ -146,6 +149,9 @@
     </ClInclude>
     <ClInclude Include="LayerType.h">
       <Filter>Engine\02.Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionalLayer.h">
+      <Filter>Engine\02.Layers\FunctionalLayer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -12,4 +12,9 @@ namespace TEngine
 	Layer::~Layer()
 	{
 	}
+
+	void Layer::initialize(Domain* domain)
+	{
+		_domain = domain;
+	}
 }

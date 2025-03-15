@@ -14,7 +14,7 @@ namespace TEngine
 
 	void UpdateLayer::initialize(Domain* domain)
 	{
-		_domain = domain;
+		Layer::initialize(domain);
 	}
 
 	void UpdateLayer::perform()

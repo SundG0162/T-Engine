@@ -5,6 +5,5 @@ namespace TEngine
 	{
 		Repeat,
 		Once,
-		Functional
 	};
 }
