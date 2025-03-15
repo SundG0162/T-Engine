@@ -5,4 +5,8 @@ namespace TEngine
 	Entity::Entity()
 	{
 	}
+
+	Entity::~Entity()
+	{
+	}
 }

@@ -2,7 +2,6 @@
 #include "UpdateLayer.h"
 #include "Domain.h"
 #include "Entity.h"
-#include "T_Nexus.h"
 namespace TEngine
 {
 	UpdateLayer::UpdateLayer() : Layer(LayerType::Repeat)

@@ -20,9 +20,6 @@
     <Filter Include="Test\Entities">
       <UniqueIdentifier>{55a9466f-df9e-4d92-91aa-eda1c86f01c5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Test\Layers">
-      <UniqueIdentifier>{adea68c3-e242-4843-8034-6c203d3e33fa}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -45,15 +42,6 @@
     </ClInclude>
     <ClInclude Include="TestEntity.h">
       <Filter>Test\Entities</Filter>
-    </ClInclude>
-    <ClInclude Include="TestLayer.h">
-      <Filter>Test\Layers</Filter>
-    </ClInclude>
-    <ClInclude Include="ITestLayerFunction.h">
-      <Filter>Test\Layers</Filter>
-    </ClInclude>
-    <ClInclude Include="IProtoLayerFunction.h">
-      <Filter>Test\Layers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -81,9 +69,6 @@
     </ClCompile>
     <ClCompile Include="TestEntity.cpp">
       <Filter>Test\Entities</Filter>
-    </ClCompile>
-    <ClCompile Include="TestLayer.cpp">
-      <Filter>Test\Layers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

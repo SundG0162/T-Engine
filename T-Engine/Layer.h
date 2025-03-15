@@ -6,7 +6,6 @@ namespace TEngine
 	class Layer
 	{
 	public:
-		Layer();
 		Layer(LayerType layerType);
 		virtual ~Layer();
 
@@ -25,6 +24,6 @@ namespace TEngine
 		LayerType _layerType;
 		int _priority;
 		Domain* _domain;
-		bool _isActive = true;
+		bool _isActive;
 	};
 }

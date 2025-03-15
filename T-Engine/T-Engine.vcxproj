@@ -155,6 +155,7 @@
     <ClInclude Include="Domain.h" />
     <ClInclude Include="DomainManager.h" />
     <ClInclude Include="FunctionalLayer.h" />
+    <ClInclude Include="ILayerFunction.h" />
     <ClInclude Include="LayerType.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Layer.h" />
