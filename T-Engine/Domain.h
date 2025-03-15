@@ -11,7 +11,7 @@ namespace TEngine
 		virtual ~Domain();
 	public:
 		virtual void setup(); //생성됏을때 
-		virtual void init() = 0; //로드됐을때
+		virtual void init() abstract; //로드됐을때
 		virtual void update();
 		virtual void release();
 	public:

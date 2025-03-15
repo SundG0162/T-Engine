@@ -22,7 +22,7 @@ void TestDomain::setup()
 
 void TestDomain::init()
 {
-	MessageBox(nexus->getHWnd(), std::to_wstring(_layers[0]->getPriority()).c_str(), L"ASD", MB_OK);
+	MessageBox(nexus->getHWnd(), std::to_wstring(_layers.size()).c_str(), L"ASD", MB_OK);
 	TestEntity* entity = new TestEntity;
 	_entities.push_back(entity);
 }

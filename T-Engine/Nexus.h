@@ -16,9 +16,9 @@ namespace TEngine
 		void showWindow(int nCmdShow);
 		int messageLoop();
 	protected:
-		virtual void startUp() = 0;
-		virtual void mainUpdate() = 0;
-		virtual void cleanUp() = 0;
+		virtual void startUp() abstract;
+		virtual void mainUpdate() abstract;
+		virtual void cleanUp() abstract;
 
 	public:
 		const wstring& setWindowName(const wstring& name) { _windowName = name; }
