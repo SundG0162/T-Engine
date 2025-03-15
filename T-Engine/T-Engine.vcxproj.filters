@@ -153,5 +153,8 @@
     <ClInclude Include="FunctionalLayer.h">
       <Filter>Engine\02.Layers\FunctionalLayer</Filter>
     </ClInclude>
+    <ClInclude Include="Delegate.h">
+      <Filter>Engine\06.Utils</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
