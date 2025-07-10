@@ -43,6 +43,7 @@
     <ClInclude Include="TestEntity.h">
       <Filter>Test\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="pchClient.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -70,5 +71,6 @@
     <ClCompile Include="TestEntity.cpp">
       <Filter>Test\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="pchClient.cpp" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 #pragma once
 
-#pragma comment(lib, "T-Engine.lib")
+//#pragma comment(lib, "T-Engine.lib")
 #include<Windows.h>
 #include<tchar.h>
 #include<memory>

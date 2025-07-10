@@ -156,6 +156,7 @@
     <ClInclude Include="Domain.h" />
     <ClInclude Include="DomainManager.h" />
     <ClInclude Include="FunctionalLayer.h" />
+    <ClInclude Include="IUpdateLayer.h" />
     <ClInclude Include="LayerType.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Layer.h" />
@@ -178,6 +179,7 @@
     <ClCompile Include="Domain.cpp" />
     <ClCompile Include="DomainManager.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="IUpdateLayer.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="Nexus.cpp" />
     <ClCompile Include="pch.cpp" />

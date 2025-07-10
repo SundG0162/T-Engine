@@ -6,9 +6,7 @@ namespace TEngine
 	{
 	public:
 		Entity();
-		~Entity();
-	public:
-		virtual void update() = 0;
+		virtual ~Entity();
 	public:
 		template<typename T>
 		T* getComponent()

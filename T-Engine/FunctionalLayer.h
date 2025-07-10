@@ -7,61 +7,62 @@
 #include <functional>
 namespace TEngine
 {
-	template <typename T>
-	concept LayerFunction = std::is_class_v<T>;
+	template <typename ComponentType>
+	concept ValidComponent = std::is_class_v<ComponentType>;
 
-	template<LayerFunction T>
+	template<ValidComponent ComponentType>
 	class FunctionalLayer : public Layer
 	{
-		typedef Function void (T::* func)();
+		typedef std::function<void(ComponentType*)> ComponentFunction;
 	public: 
 		FunctionalLayer(LayerType layerType);
 		virtual ~FunctionalLayer();
 	public:
-		void initialize(Domain* domain) override;
+		virtual void initialize(Domain* domain) override;
 		void perform();
-		void setFunction(Function func) { _function = func; }
+		void setFunction(ComponentFunction func) { _function = func; }
 	public:
 		void handleOnEntityAddedEvent(Entity* entity);
 	private:
-		std::vector<Entity*> _targetEntityVector;
-		Function _function;
+		std::vector<ComponentType*> _targetEntityVector;
+		ComponentFunction _function;
+		size_t _entityAddedEventHandleID;
 	};
 
-	template<LayerFunction T>
-	inline FunctionalLayer<T>::FunctionalLayer(LayerType layerType) : Layer(layerType)
+	template<ValidComponent ComponentType>
+	inline FunctionalLayer<ComponentType>::FunctionalLayer(LayerType layerType) : Layer(layerType)
 	{
 	}
 
-	template<LayerFunction T>
-	inline FunctionalLayer<T>::~FunctionalLayer()
+	template<ValidComponent ComponentType>
+	inline FunctionalLayer<ComponentType>::~FunctionalLayer()
 	{
 	}
 
-	template<LayerFunction T>
-	inline void FunctionalLayer<T>::initialize(Domain* domain)
+	template<ValidComponent ComponentType>
+	inline void FunctionalLayer<ComponentType>::initialize(Domain* domain)
 	{
 		Layer::initialize(domain);
-		domain->OnEntityAddedEvent.addCallback<FuntionalLayer<T>>(this, handleOnEntityAddedEvent);
+		_entityAddedEventHandleID = domain->OnEntityAddedEvent.addCallback<FunctionalLayer<ComponentType>>(this, &FunctionalLayer<ComponentType>::handleOnEntityAddedEvent);
 	}
 
-	template<LayerFunction T>
-	inline void FunctionalLayer<T>::perform()
+	template<ValidComponent ComponentType>
+	inline void FunctionalLayer<ComponentType>::perform()
 	{
-		for (Entity* entity : _targetEntityVector)
+		for (ComponentType* comp : _targetEntityVector)
 		{
-			auto bindedFunc = std::bind(_function, entity);
+			auto bindedFunc = std::bind(_function, comp);
 			bindedFunc();
 		}
 	}
 
-	template<LayerFunction T>
-	inline void FunctionalLayer<T>::handleOnEntityAddedEvent(Entity* entity)
+	template<ValidComponent ComponentType>
+	inline void FunctionalLayer<ComponentType>::handleOnEntityAddedEvent(Entity* entity)
 	{
-		T* layerFunc = dynamic_cast<T*>(entity);
+		ComponentType* layerFunc = dynamic_cast<ComponentType*>(entity);
 		if (layerFunc)
 		{
-			_targetEntityVector.push_back(entity);
+			_targetEntityVector.push_back(layerFunc);
 		}
 	}
 }

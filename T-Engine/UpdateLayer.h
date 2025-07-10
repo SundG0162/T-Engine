@@ -1,14 +1,15 @@
 #pragma once
-#include "Layer.h"
+#include "FunctionalLayer.h"
+#include "IUpdateLayer.h"
 namespace TEngine
 {
-	class UpdateLayer : public Layer
+	class UpdateLayer : public FunctionalLayer<IUpdateLayer>
 	{
 	public:
 		UpdateLayer();
 		~UpdateLayer();
+
 	public:
 		void initialize(Domain* domain) override;
-		void perform() override;
 	};
 }

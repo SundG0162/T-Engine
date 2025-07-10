@@ -91,6 +91,7 @@
     <ClCompile Include="RenderLayer.cpp">
       <Filter>Engine\02.Layers</Filter>
     </ClCompile>
+    <ClCompile Include="IUpdateLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Nexus.h">
@@ -156,5 +157,6 @@
     <ClInclude Include="Delegate.h">
       <Filter>Engine\06.Utils</Filter>
     </ClInclude>
+    <ClInclude Include="IUpdateLayer.h" />
   </ItemGroup>
 </Project>

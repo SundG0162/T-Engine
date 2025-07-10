@@ -18,10 +18,10 @@ namespace TEngine
 	public:
 		void addLayer(Layer* layer, int priority);
 		void removeLayer(Layer* layer);
-		inline void addEntity(Entity* entity)
+		void addEntity(Entity* entity)
 		{
-			_entities.push_back(entity);
 			OnEntityAddedEvent.invoke(entity);
+			_entities.push_back(entity);
 		}
 		void removeEntity(Entity* entity);
 		void cleanUp();
@@ -44,7 +44,7 @@ namespace TEngine
 		Delegate<Entity*> OnEntityAddedEvent;
 	protected:
 		RenderCore* _renderCore;
-	private:
+	protected:
 		std::vector<Entity*> _entities;
 		std::vector<Layer*> _layers;
 	};

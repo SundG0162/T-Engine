@@ -1,4 +1,4 @@
-#include "pch.h"
+#include "pchClient.h"
 #include "TestDomain.h"
 #include "TestEntity.h"
 

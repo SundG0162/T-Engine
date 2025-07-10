@@ -10,7 +10,6 @@
 namespace TEngine
 {
 	Domain::Domain()
-		: OnEntityAddedEvent()
 	{
 	}
 
