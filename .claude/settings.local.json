@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/MSBuild.exe\" T-Engine.sln -p:Configuration=Debug -p:Platform=x64 -verbosity:minimal)",
+      "Bash(ls -la D:/cpp/T-Engine/T-Engine/x64/Debug/*.obj)",
+      "Bash('/c/Program Files \\(x86\\)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/dumpbin.exe' /symbols D:/cpp/T-Engine/T-Engine/x64/Debug/Entity.obj)",
+      "Bash(\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/dumpbin.exe\" //EXPORTS \"D:/cpp/T-Engine/Result/T-Engine.lib\")",
+      "Bash(\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/dumpbin.exe\" /ARCHIVEMEMBERS \"Result/T-Engine.lib\")",
+      "Bash(DUMPBIN=\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/dumpbin.exe\" \"$DUMPBIN\" -ARCHIVEMEMBERS 'D:\\\\cpp\\\\T-Engine\\\\Result\\\\T-Engine.lib')",
+      "Bash(DUMPBIN=\"/c/Program Files \\(x86\\)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/dumpbin.exe\" \"$DUMPBIN\" -SYMBOLS 'D:\\\\cpp\\\\T-Engine\\\\T-Engine\\\\x64\\\\Debug\\\\Entity.obj')"
+    ]
+  }
+}
